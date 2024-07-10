@@ -10,10 +10,10 @@
 <body>
     
 <div class="form">
-    <input type="number" placeholder="rule" min="0" max="256" id="rule" value="90">
-    <input type="number" placeholder="gens" min="0" max="256" id="gens">
-    <input type="number" placeholder="cells" min="0" max="256" id="cells">
-    <button>generate</button>
+    <input type="number" placeholder="rule" min="0" max="256" id="rule" value="90" required>
+    <input type="number" placeholder="gens" min="0" max="256" id="gens" value="1" required>
+    <input type="number" placeholder="cells" min="0" max="256" id="cells" value="5" required>
+    <button onclick="getValues()">generate</button>
 </div>
 
 <hr>

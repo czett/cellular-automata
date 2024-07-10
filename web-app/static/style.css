@@ -12,32 +12,24 @@ body{
 .output{
     display: flex;
     justify-content: center;
+    width: 100vw;
+}
+
+.image{
+    width: 50%;
+    height: auto;
 }
 
 .row{
     display: flex;
 }
 
-/*.cell:nth-child(odd){
-    background: white;
-}
-
-.cell:nth-child(even){
-    background: black;
-}
-
-.row:nth-child(odd) .cell:nth-child(odd){
-    background: black;
-}
-
-.row:nth-child(odd) .cell:nth-child(even){
-    background: white;
-}*/
-
 .cell{
+    flex: 1;
     background-color: white;
+    aspect-ratio: 1 !important;
 }
 
-.cell.alive{
+.cell.alive {
     background-color: black;
 }
