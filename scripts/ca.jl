@@ -40,5 +40,5 @@ function main(rule)
 end
 
 # Change the rule dynamically
-rule = 30
+rule = 148
 main(rule)
