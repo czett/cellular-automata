@@ -1,0 +1,43 @@
+body{
+    background-color: #666;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+    width: 100%;
+}
+
+.output{
+    display: flex;
+    justify-content: center;
+}
+
+.row{
+    display: flex;
+}
+
+/*.cell:nth-child(odd){
+    background: white;
+}
+
+.cell:nth-child(even){
+    background: black;
+}
+
+.row:nth-child(odd) .cell:nth-child(odd){
+    background: black;
+}
+
+.row:nth-child(odd) .cell:nth-child(even){
+    background: white;
+}*/
+
+.cell{
+    background-color: white;
+}
+
+.cell.alive{
+    background-color: black;
+}
