@@ -26,8 +26,8 @@ function generate_automaton(initial_state, rule, generations)
 end
 
 function main(rule)
-    num_cells = 100
-    generations = 200
+    num_cells = 200
+    generations = 300
     initial_state = zeros(Int, num_cells)
     initial_state[div(num_cells, 2) + 1] = 1 # Start with a single black cell in the middle
 
@@ -40,5 +40,5 @@ function main(rule)
 end
 
 # Change the rule dynamically
-rule = 148
+rule = 30
 main(rule)

@@ -53,10 +53,10 @@ function renderPlot(cells, gens, rule_bin){
                 if(!left.contains("alive") && current.contains("alive") && right.contains("alive") && rule_bin[4] == 1){
                     next.add("alive");  
                 }
-                if(!left.contains("alive") && !current.contains("alive") && right.contains("alive") && rule_bin[5] == 1){
+                if(!left.contains("alive") && current.contains("alive") && !right.contains("alive") && rule_bin[5] == 1){
                     next.add("alive");  
                 }
-                if(!left.contains("alive") && current.contains("alive") && !right.contains("alive") && rule_bin[6] == 1){
+                if(!left.contains("alive") && !current.contains("alive") && right.contains("alive") && rule_bin[6] == 1){
                     next.add("alive");  
                 }
                 if(!left.contains("alive") && !current.contains("alive") && !right.contains("alive") && rule_bin[7] == 1){
