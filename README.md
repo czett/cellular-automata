@@ -2,7 +2,7 @@
 
 ### A lightweight web tool for generating cellular automata using Wolfram rules. Easily visualize and experiment with various rules to see how simple initial conditions evolve over time.
 
-### Visit wolframmmm.tiiny.site for the current stable tool on the go!
+### Visit wolfram.tiiny.site for the current stable tool on the go!
 
 ## Features:
 - Wolfram Rules: Supports all 256 elementary cellular automaton rules.
