@@ -11,7 +11,7 @@
 - User-Friendly Interface: Simple and intuitive controls for generating and manipulating cellular automata.
 
 ## Usage:
-- Visit the Web Tool: Open wolfram.tiiny.host in your browser.
+- Visit the Web Tool: Open [ca-gen.vercel.app](https://ca-gen.vercel.app) in your browser.
 - Set Parameters: Choose a rule number (0-255) and initial conditions.
 - Generate Automaton: Click the "Generate" button to see the automaton evolve.
 - Experiment: Adjust parameters and observe different patterns and behaviors.
