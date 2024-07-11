@@ -79,6 +79,6 @@ canvas{
     aspect-ratio: 1 !important;
 }
 
-.cell.alive {
-    background-color: rgb(15, 16, 43);
+[data-state="1"]{
+    background-color: black;
 }

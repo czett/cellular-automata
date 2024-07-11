@@ -6,62 +6,52 @@ function getValues(){
     let gens = document.getElementById("gens").value;
     let rule_decimal = document.getElementById("rule").value;
     let rule_bin = (rule_decimal >>> 0).toString(2).padStart(8, '0');
+    
+    let rule_arr = [
+        [
+            [rule_bin[7], rule_bin[6]],[rule_bin[5], rule_bin[4]]
+        ],
+        [
+            [rule_bin[3], rule_bin[2]],[rule_bin[1], rule_bin[0]]
+        ]
+    ]
+
+    // 00011110
 
     removeAllChildren(image);
-    renderPlot(cells, gens, rule_bin)
+    renderPlot(cells, gens, rule_arr)
 }
 
 // Plot generation, just the cells - all white except start cell in the center
-function renderPlot(cells, gens, rule_bin){
+function renderPlot(cells, gens, rule_arr){
     for(let j=0; j<gens; j++){
         let newRow = document.createElement('div');
         newRow.className = "row";
         image.appendChild(newRow);
         for(let i=0; i<cells; i++){
             let newPixel = document.createElement('div');
-            newPixel.className = "cell cell-" + j + "-" + i;
+            newPixel.classList.add("cell");
+            newPixel.dataset.state = 0;
+            newPixel.classList.add("c" + j + "-" + i);
     
             if(j==0 && i == Math.floor(cells/2)){
-                newPixel.classList.add("alive");
+                newPixel.dataset.state = 1;
             }
     
             newRow.appendChild(newPixel);
         }
     }
-    
-    // Procedural row generation
+
+    // Array based generation (11.07.2024)
     for(let j=0; j<gens; j++){
         for(let i=0; i<cells; i++){
             if(i>1 && i<cells-2 && j<gens-1){
-                let current = document.querySelector(".cell-" + j + "-" + i).classList;
-                let right = document.querySelector(".cell-" + j + "-" + (i-1)).classList;
-                let left = document.querySelector(".cell-" + j + "-" + (i+1)).classList;
-                let next = document.querySelector(".cell-" + (j+1) + "-" + i).classList;
-    
-                if(left.contains("alive") && current.contains("alive") && right.contains("alive") && rule_bin[0] == 1){
-                    next.add("alive");  
-                }
-                if(left.contains("alive") && current.contains("alive") && !right.contains("alive") && rule_bin[1] == 1){
-                    next.add("alive");  
-                }
-                if(left.contains("alive") && !current.contains("alive") && right.contains("alive") && rule_bin[2] == 1){
-                    next.add("alive");  
-                }
-                if(left.contains("alive") && !current.contains("alive") && !right.contains("alive") && rule_bin[3] == 1){
-                    next.add("alive");  
-                }
-                if(!left.contains("alive") && current.contains("alive") && right.contains("alive") && rule_bin[4] == 1){
-                    next.add("alive");  
-                }
-                if(!left.contains("alive") && current.contains("alive") && !right.contains("alive") && rule_bin[5] == 1){
-                    next.add("alive");  
-                }
-                if(!left.contains("alive") && !current.contains("alive") && right.contains("alive") && rule_bin[6] == 1){
-                    next.add("alive");  
-                }
-                if(!left.contains("alive") && !current.contains("alive") && !right.contains("alive") && rule_bin[7] == 1){
-                    next.add("alive");  
-                }
+                current = document.querySelector("." + "c" + j + "-" + i).dataset.state;
+                left = document.querySelector("." + "c" + j + "-" + (i-1)).dataset.state;
+                right = document.querySelector("." + "c" + j + "-" + (i+1)).dataset.state;
+                next = document.querySelector("." + "c" + (j+1) + "-" + i);
+
+                next.dataset.state = rule_arr[left][current][right]
             }
         }
     }
@@ -82,7 +72,7 @@ function concentrationGraph(cells, gens) {
     for (let j = 0; j < gens; j++) {
         let prov_sum = 0;
         for (let i = 0; i < cells; i++) {
-            if (document.querySelector(".cell-" + j + "-" + i).classList.contains("alive")) {
+            if (document.querySelector(".c" + j + "-" + i).dataset.state == 1) {
                 prov_sum += 1;
             }
         }
