@@ -16,10 +16,8 @@ function getValues(){
         ]
     ]
 
-    // 00011110
-
     removeAllChildren(image);
-    renderPlot(cells, gens, rule_arr)
+    renderPlot(cells, gens, rule_arr);
 }
 
 // Plot generation, just the cells - all white except start cell in the center
@@ -51,7 +49,7 @@ function renderPlot(cells, gens, rule_arr){
                 right = document.querySelector("." + "c" + j + "-" + (i+1)).dataset.state;
                 next = document.querySelector("." + "c" + (j+1) + "-" + i);
 
-                next.dataset.state = rule_arr[left][current][right]
+                next.dataset.state = rule_arr[left][current][right];
             }
         }
     }
@@ -64,6 +62,7 @@ function removeAllChildren(parent){
         parent.removeChild(parent.firstChild);
     }
 }
+
 let myChart; // Declare the chart instance variable globally
 
 function concentrationGraph(cells, gens) {
