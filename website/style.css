@@ -51,8 +51,16 @@ input, button{
 
 .output{
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 100vw;
+}
+
+canvas{
+    width: 60vw !important;
+    height: 40vh !important;
+    aspect-ratio: 1;
+    margin: 10vh 0;
 }
 
 .image{

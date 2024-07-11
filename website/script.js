@@ -65,10 +65,85 @@ function renderPlot(cells, gens, rule_bin){
             }
         }
     }
+
+    concentrationGraph(cells, gens);
 }
 
 function removeAllChildren(parent){
     while (parent.firstChild){
         parent.removeChild(parent.firstChild);
     }
+}
+let myChart; // Declare the chart instance variable globally
+
+function concentrationGraph(cells, gens) {
+    let concs = [];
+    let rows = [];
+    for (let j = 0; j < gens; j++) {
+        let prov_sum = 0;
+        for (let i = 0; i < cells; i++) {
+            if (document.querySelector(".cell-" + j + "-" + i).classList.contains("alive")) {
+                prov_sum += 1;
+            }
+        }
+        concs.push(prov_sum / cells);
+    }
+
+    for (let i = 1; i <= gens; i++) {
+        rows.push(i);
+    }
+
+    const ctx = document.getElementById('cons-chart').getContext('2d');
+
+    if (myChart) {
+        myChart.destroy();
+    }
+
+    myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: rows,
+            datasets: [{
+                label: 'Concentration over Generations',
+                data: concs,
+                borderColor: '#05093f',
+                borderWidth: 8,
+                fill: false
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Generation',
+                        font: {
+                            size: 50
+                        }
+                    },
+                    ticks: {
+                        font: {
+                            size: 50
+                        }
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Concentration',
+                        font: {
+                            size: 50
+                        }
+                    },
+                    ticks: {
+                        font: {
+                            size: 50
+                        }
+                    }
+                }
+            }
+        }
+    });
 }
