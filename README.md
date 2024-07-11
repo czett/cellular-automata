@@ -7,6 +7,7 @@
 ## Features:
 - Wolfram Rules: Supports all 256 elementary cellular automaton rules.
 - Neat Visualization: plain JavaScript rendering of cellular automata.
+- Concentration visualization with Chart.JS below the graphic.
 - User-Friendly Interface: Simple and intuitive controls for generating and manipulating cellular automata.
 
 ## Usage:
