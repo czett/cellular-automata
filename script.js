@@ -63,7 +63,9 @@ function removeAllChildren(parent){
     }
 }
 
-let myChart; // Declare the chart instance variable globally
+let myChart;
+const rootStyles = getComputedStyle(document.documentElement);
+const fg = rootStyles.getPropertyValue('--dead').trim();
 
 function concentrationGraph(cells, gens) {
     let concs = [];
@@ -95,7 +97,7 @@ function concentrationGraph(cells, gens) {
             datasets: [{
                 label: 'Concentration over Generations',
                 data: concs,
-                borderColor: '#05093f',
+                borderColor: fg,
                 borderWidth: 8,
                 fill: false
             }]

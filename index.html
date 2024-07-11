@@ -11,9 +11,9 @@
 <body>
     
 <form class="form" action="javascript:getValues()">
-    <input type="number" placeholder="rule" min="0" max="256" id="rule" value="60" required>
-    <input type="number" placeholder="gens" min="0" max="1000" id="gens" value="50" required>
-    <input type="number" placeholder="cells" min="0" max="500" id="cells" value="30" required>
+    <label for="rule">rule:</label><input name="rule" type="number" placeholder="rule" min="0" max="256" id="rule" value="60" required>
+    <label for="gens">gens:</label><input name="gens" type="number" placeholder="gens" min="0" max="1000" id="gens" value="50" required>
+    <label for="cells">cells:</label><input name="cells" type="number" placeholder="cells" min="0" max="500" id="cells" value="30" required>
     <button type="submit">generate</button>
 </form>
 
