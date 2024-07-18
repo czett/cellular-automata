@@ -7,14 +7,20 @@
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
     
-<form class="form" action="javascript:getValues()">
-    <label for="rule">rule:</label><input name="rule" type="number" placeholder="rule" min="0" max="256" id="rule" value="60" required>
-    <label for="gens">gens:</label><input name="gens" type="number" placeholder="gens" min="0" max="1000" id="gens" value="50" required>
-    <label for="cells">cells:</label><input name="cells" type="number" placeholder="cells" min="0" max="500" id="cells" value="30" required>
-    <button type="submit">generate</button>
+<form class="form" id="form" action="javascript:getValues()">
+    <div class="mobile controller" onmousedown="mobileMenu()">
+        <span class="material-symbols-outlined mobile-arrow">arrow_forward_ios</span>
+    </div>
+    <div class="form-content" data-vis="yes">
+        <label for="rule">rule:</label><input name="rule" type="number" placeholder="rule" min="0" max="256" id="rule" value="60" required>
+        <label for="gens">gens:</label><input name="gens" type="number" placeholder="gens" min="0" max="1000" id="gens" value="50" required>
+        <label for="cells">cells:</label><input name="cells" type="number" placeholder="cells" min="0" max="500" id="cells" value="30" required>
+        <button type="submit">generate</button>
+    </div>
 </form>
 
 <div class="output">

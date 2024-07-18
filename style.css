@@ -30,6 +30,8 @@ body{
     transform: translateX(-50%);
     height: 17vh;
     box-sizing: border-box;
+    visibility: visible;
+    opacity: 1;
 }
 
 input{
@@ -107,4 +109,77 @@ canvas{
 
 .cell:nth-child(1), .cell:nth-child(2), .cell:nth-last-child(1), .cell:nth-last-child(2){
     display: none;
+}
+
+.mobile{
+    display: none;
+}
+
+@media (width < 1000px){
+    .mobile{
+        display: block;
+    }
+
+    .form{
+        display: flex;
+        justify-content: center;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        transition: 250ms;
+    }
+    
+    .form-content{
+        padding-bottom: 1.5vh;
+        display: flex;
+        justify-content: center;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        opacity: 1;
+        transition: 250ms;
+        visibility: visible;
+    }
+
+    .form *{
+        font-size: 1rem;
+    }
+
+    .form input{
+        width: 10%;
+        text-align: center;
+        margin: 0;
+        margin-bottom: 2vh;
+    }
+
+    .image{
+        width: 100%;
+    }
+
+    .controller{
+        cursor: pointer;
+        margin-bottom: 1vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: .75vh 0;
+    }
+
+    .controller span{
+        transition: 250ms;
+    }
+
+    .controller:hover{
+        filter: brightness(0.95);
+    }
+
+    canvas{
+        width: 100% !important;
+        height: 20vh !important;
+        margin: 10vh 0;
+    }
 }

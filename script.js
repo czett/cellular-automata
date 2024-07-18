@@ -99,7 +99,7 @@ function concentrationGraph(cells, gens) {
                 label: 'Concentration over Generations',
                 data: concs,
                 borderColor: fg,
-                borderWidth: 8,
+                borderWidth: 4,
                 fill: false
             }]
         },
@@ -112,12 +112,12 @@ function concentrationGraph(cells, gens) {
                         display: true,
                         text: 'Generation',
                         font: {
-                            size: 50
+                            size: 15
                         }
                     },
                     ticks: {
                         font: {
-                            size: 50
+                            size: 15
                         }
                     }
                 },
@@ -126,16 +126,34 @@ function concentrationGraph(cells, gens) {
                         display: true,
                         text: 'Concentration',
                         font: {
-                            size: 50
+                            size: 15
                         }
                     },
                     ticks: {
                         font: {
-                            size: 50
+                            size: 15
                         }
                     }
                 }
             }
         }
     });
+}
+
+function mobileMenu(){
+    let formElement = document.querySelector(".form-content");
+    
+    if (formElement.dataset.vis == "yes"){
+        document.querySelector(".mobile-arrow").style.rotate = "90deg";
+        formElement.style.opacity = "0";
+        formElement.style.visibility = "hidden";
+        formElement.style.display = "none";
+        formElement.dataset.vis = "no"
+    }else{
+        document.querySelector(".mobile-arrow").style.rotate = "0deg";
+        formElement.style.opacity = "1";
+        formElement.style.visibility = "visible";
+        formElement.style.display = "flex";
+        formElement.dataset.vis = "yes"
+    }
 }
