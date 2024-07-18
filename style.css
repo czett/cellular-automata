@@ -104,3 +104,7 @@ canvas{
     background-color: var(--alive);
     box-shadow: 0 0 5px 1px var(--alive);
 }
+
+.cell:nth-child(1), .cell:nth-child(2), .cell:nth-last-child(1), .cell:nth-last-child(2){
+    display: none;
+}

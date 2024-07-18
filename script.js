@@ -2,7 +2,8 @@ const image = document.querySelector(".image");
 
 // fecthing values from HTML form
 function getValues(){
-    let cells = document.getElementById("cells").value;
+    let cells = parseInt(document.getElementById("cells", 10).value) + 4;
+    console.log(cells);
     let gens = document.getElementById("gens").value;
     let rule_decimal = document.getElementById("rule").value;
     let rule_bin = (rule_decimal >>> 0).toString(2).padStart(8, '0');
