@@ -5,11 +5,11 @@
 }
 
 :root{
-    --bg: #0e1a0e;
-    --b2: #000e01;
-    --fg: #aad1aa;
-    --dead: #a2c2a3;
-    --alive: #022504;
+    --bg: #eef;
+    --b2: #dde;
+    --fg: #101A30;
+    --dead: #eaeafa;
+    --alive: #20203A;
 }
 
 body{
@@ -38,7 +38,7 @@ input{
     border: none;
     /*padding-left: 2vh;
     border-bottom-left-radius: 2vh;*/
-    border-bottom: 0.5vh solid var(--fg);
+    border-bottom: 2px solid var(--fg);
     color: var(--fg);
     margin: 0 1.5vw;
     margin-right: 5vw;
@@ -53,7 +53,7 @@ button{
     border-radius: 2vh;
     border: none;
     color: var(--bg);
-    font-size: 4vh;
+    font-size: 1.5rem;
     box-sizing: border-box;
     padding: 1vh 4vh;
     font-weight: 500;
@@ -102,7 +102,7 @@ canvas{
 
 [data-state="1"]{
     background-color: var(--alive);
-    box-shadow: 0 0 5px 1px var(--alive);
+    /* box-shadow: 0 0 5px 1px var(--alive); */
 }
 
 .cell:nth-child(1), .cell:nth-child(2), .cell:nth-last-child(1), .cell:nth-last-child(2){

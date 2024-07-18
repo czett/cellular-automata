@@ -66,7 +66,7 @@ function removeAllChildren(parent){
 
 let myChart;
 const rootStyles = getComputedStyle(document.documentElement);
-const fg = rootStyles.getPropertyValue('--dead').trim();
+const fg = rootStyles.getPropertyValue('--alive').trim();
 
 function concentrationGraph(cells, gens) {
     let concs = [];
